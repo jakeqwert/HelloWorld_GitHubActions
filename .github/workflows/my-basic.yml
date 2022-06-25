@@ -53,7 +53,15 @@ jobs: # каждый job запуститься на отдельной вирт
         run:  echo "Name application ${{ env.APPLICATION_NAME }}" 
   
       - name: List current folder
-        run: "ls -la"
+        run: "ls -la"    # пустая папка, т.к. запустился докер и в нем пусто, мы не скопировали ничего, нужно git clone в контейнер докер
+  
+      - name: Git clone my repo
+        # используем внешние скрипты
+        uses: actions/checkout@v1     # checkout repo
+        
+      - name: List current folder
+        run: "ls -la"    # папка содержит repo
+     
   
   my_testing: # 2 job
     runs-on: ubuntu-latest 
