@@ -69,6 +69,12 @@ jobs: # каждый job запуститься на отдельной вирт
     steps:
       - name: Print message2 in my_testing job, Run a one-line script
         run: echo Hello, world 2!
+      
+      - name: Lets test some packages if they are here 1
+        run: aws --version
+        
+      - name: Lets test some packages if they are here 2
+        run: zip --version        
         
 #   my_deploy: # 3 job
   
