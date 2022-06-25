@@ -66,9 +66,16 @@ jobs: # каждый job запуститься на отдельной вирт
   my_testing: # 2 job
     runs-on: ubuntu-latest 
     needs: [build]   # по умолчанию все job запускаются одновременно, но если добавить блок needs, будут друг за другом
+    env:             # локальные env внутри job 'my_testing'     Job Environment Variables
+      VAR123 : 12356
+      VAR3456 : 12356
     steps:
       - name: Print message2 in my_testing job, Run a one-line script
-        run: echo Hello, world 2!
+        env:             # локальные env внутри step job 'my_testing'    Step Environment Variables
+          VAR2 : 12356
+        run: |
+          echo Hello, world 2!
+          echo "Print env vars: ${{ env.VAR2 }} ${{ env.VAR3456 }} "
       
       - name: Lets test some packages if they are here 1
         run: aws --version
