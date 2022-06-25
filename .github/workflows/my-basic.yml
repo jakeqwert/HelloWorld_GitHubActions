@@ -7,7 +7,7 @@ name: my-basic-GitHubActions   # имя без пробелов
 # глобальные переменные окружения
 env:
   APPLICATION_NAME: "My_HelloWorld_GitHubActions"
-  PACKAGE_NAME    : "Application-ver-${{ github.sha }}"  # sha commita
+  PACKAGE_NAME    : "Application-ver-${{ github.sha }}"  # переменная github,   sha commita
 
 # Controls when the workflow will run  
 # когда будет запускаться
@@ -43,10 +43,17 @@ jobs: # каждый job запуститься на отдельной вирт
 
       # Runs a set of commands using the runners shell
       - name:  Print message2 in build job, Run a multi-line script
+      #  |  пайп палочка        
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
   
+      - name: Execute 3 commands
+#         shell:
+        run:  echo "Name application ${{ env.APPLICATION_NAME }}" 
+  
+      - name: List current folder
+        run: "ls -la"
   
   my_testing: # 2 job
     runs-on: ubuntu-latest 
