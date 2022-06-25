@@ -2,7 +2,7 @@
 
 # Можно нажать Ctrl+Space авто выбор из списка
 
-name: my-basic-GitHubActions   # имя без пробелов 
+name: my-basic-GitHubActions   # имя Workflows, без пробелов 
 
 # глобальные переменные окружения
 env:
