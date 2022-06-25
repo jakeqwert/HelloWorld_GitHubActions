@@ -4,6 +4,11 @@
 
 name: my-basic-GitHubActions   # имя без пробелов 
 
+# глобальные переменные окружения
+env:
+  APPLICATION_NAME: "My_HelloWorld_GitHubActions"
+  PACKAGE_NAME    : "Application-ver-${{ github.sha }}"  # sha commita
+
 # Controls when the workflow will run  
 # когда будет запускаться
 on:
