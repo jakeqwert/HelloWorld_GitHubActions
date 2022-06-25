@@ -1,1 +1,1 @@
-[![Actions Status](https://github.com/{user}/{repo}/workflows/{action}/badge.svg)](https://github.com/{user}/{repo}/actions)
+[![Actions Status](https://github.com/jakeqwert/HelloWorld_GitHubActions/workflows/my-basic-GitHubActions/badge.svg)](https://github.com/jakeqwert/HelloWorld_GitHubActions/actions)
